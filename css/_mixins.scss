@@ -8,8 +8,8 @@
 
 /* $radius is the parameter of the function */
 
-// @mixin border-radius($radius) {
-//     -webkit-border-radius: $radius;
-//     -moz-border-radius: $radius;
-//     border-radius: $radius;
-// }
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
