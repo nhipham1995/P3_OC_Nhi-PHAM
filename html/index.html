@@ -7,7 +7,10 @@
 		<!-- Google Font -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,100;1,300&family=Shrikhand&display=swap" rel="stylesheet">
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,100;1,300&family=Shrikhand&display=swap"
+			rel="stylesheet"
+		/>
 		<!-- FontAwesome -->
 		<script
 			src="https://kit.fontawesome.com/47edfb6a7c.js"
@@ -34,51 +37,135 @@
 					<i class="fas fa-map-marker-alt"></i>
 					<p>Paris, Belleville</p>
 				</div>
-				<h1>Réservez le menu qui vous convient</h1>
-				<p>
-					Découvrez des restaurants d'exception, sélectionnés par nos
-					soins.
-				</p>
+				<div class="container">
+					<h1>Réservez le menu qui vous convient</h1>
+					<p>
+						Découvrez des restaurants d'exception, sélectionnés par
+						nos soins.
+					</p>
+				</div>
+
 				<button>Explorer nos restaurants</button>
 			</section>
 			<section class="function-part">
-				<h2>Fonctionnement</h2>
-				<div>
-					<div>
-						<!-- icon -->
-						<p>Choisissez un restaurant</p>
+				<div class="container">
+					<h2>Fonctionnement</h2>
+					<div class="functions">
+						<article>
+							<div class="function-number">1</div>
+							<div class="function-content">
+								<i class="fas fa-mobile-alt"></i>
+								<p>Choisissez un restaurant</p>
+							</div>
+						</article>
+						<article>
+							<div class="function-number">2</div>
+							<div class="function-content">
+								<i class="fas fa-list-ul"></i>
+								<p>Composez votre menu</p>
+							</div>
+						</article>
+						<article>
+							<div class="function-number">3</div>
+							<div class="function-content">
+								<i class="fas fa-store"></i>
+								<p>Dégustez au restaurant</p>
+							</div>
+						</article>
 					</div>
 				</div>
 			</section>
 			<section class="restaurant-list">
-				<h2>Restaurants</h2>
-				<div>
-					<article class="restaurant-item">
-						<figure class="card-img">
-							<img
-								src="../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
-								alt="Image La Palette du Goût"
-							/>
-						</figure>
-						<div class="card-body">
-							<div>
-								<h3 class="card-title">La palette du goût</h3>
-								<p class="card-description">Ménimontant</p>
+				<div class="container">
+					<h2>Restaurants</h2>
+					<div>
+						<article class="restaurant-item">
+							<div class="new-tag">Nouveau</div>
+							<figure class="card-img">
+								<img
+									src="../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+									alt="Image La Palette du Goût"
+								/>
+							</figure>
+							<div class="card-body">
+								<div class="card-content">
+									<h3 class="card-title">
+										La palette du goût
+									</h3>
+									<p class="card-des">Ménimontant</p>
+								</div>
+								<i class="fas fa-heart"> </i>
 							</div>
-							<!-- heart icon -->
-						</div>
-					</article>
-					
+						</article>
+						<article class="restaurant-item">
+							<div class="new-tag">Nouveau</div>
+							<figure class="card-img">
+								<img
+									src="../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"
+									alt="Image La Palette du Goût"
+								/>
+							</figure>
+							<div class="card-body">
+								<div class="card-content">
+									<h3 class="card-title">
+										La note enchantée
+									</h3>
+									<p class="card-des">Charonne</p>
+								</div>
+								<i class="fas fa-heart"> </i>
+							</div>
+						</article>
+						<article class="restaurant-item">
+							<figure class="card-img">
+								<img
+									src="../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
+									alt="Image La Palette du Goût"
+								/>
+							</figure>
+							<div class="card-body">
+								<div class="card-content">
+									<h3 class="card-title">À la française</h3>
+									<p class="card-des">Cité Rouge</p>
+								</div>
+								<i class="fas fa-heart"> </i>
+							</div>
+						</article>
+						<article class="restaurant-item">
+							<figure class="card-img">
+								<img
+									src="../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+									alt="Image La Palette du Goût"
+								/>
+							</figure>
+							<div class="card-body">
+								<div class="card-content">
+									<h3 class="card-title">
+										Le délice des sens
+									</h3>
+									<p class="card-des">Folie-Méricourt</p>
+								</div>
+								<i class="fas fa-heart"> </i>
+							</div>
+						</article>
+					</div>
+				</div>
 			</section>
 		</main>
 		<footer>
-			<div class="logo">ohmyfood</div>
-			<div class="footer-list">
-				<div>
-					<!-- icon -->
-					<p>Proposer un restaurant</p>
+			<div class="container">
+				<div class="logo">ohmyfood</div>
+				<div class="footer-list">
+					<div class="footer-item-with-icon">
+						<i class="fas fa-utensils"></i>
+						<p>Proposer un restaurant</p>
+					</div>
+					<div class="footer-item-with-icon">
+						<i class="fas fa-handshake"></i>
+						<p>Devenir partenaire</p>
+					</div>
+					<div class="footer-item">Mentions légales</div>
+					<div class="footer-item">Contact</div>
 				</div>
-				<div>Mentions légales</div>
 			</div>
 		</footer>
 	</body>

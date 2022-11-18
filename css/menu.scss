@@ -1,0 +1,133 @@
+@import "variables";
+@import "mixins";
+@import "card";
+
+body {
+	font-family: $roboto;
+	margin: 0;
+}
+.container {
+	max-width: 90%;
+	margin: auto;
+}
+header .logo {
+	position: relative;
+	a {
+		cursor: pointer;
+		&:hover {
+			i {
+				color: #4a9482;
+			}
+		}
+		i {
+			position: absolute;
+			font-size: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 5%;
+			color: rgb(67, 67, 67);
+		}
+	}
+	figure.logo-img {
+		@include flex-center();
+		margin: 0;
+		img {
+			margin: 20px auto 15px auto;
+			height: 35px;
+		}
+	}
+}
+main {
+	position: relative;
+	.img-dish {
+		width: 100%;
+		overflow: hidden;
+		figure {
+			margin: 0;
+			img {
+				object-fit: cover;
+				max-width: 100%;
+			}
+		}
+	}
+	.detail {
+		position: absolute;
+		top: 190px;
+		height: 500px;
+		width: 100%;
+		background-color: rgb(248, 248, 248);
+		border-top-left-radius: 35px;
+		border-top-right-radius: 35px;
+		padding-top: 10px;
+		margin: auto;
+		.resto-name {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			h1 {
+				font-family: $shrikhand;
+				font-size: 28px;
+				font-weight: 100;
+			}
+			i {
+				font-size: 25px;
+				transition: all 0.5s ease-in-out;
+				&:hover {
+					cursor: pointer;
+					background: -webkit-gradient(
+						linear,
+						right top,
+						left bottom,
+						from($primary-color),
+						to($secondary-color)
+					);
+					background-clip: text;
+					-webkit-text-fill-color: transparent;
+				}
+			}
+		}
+		section {
+			h2 {
+				font-weight: 100;
+				font-size: 17px;
+				margin: 0;
+			}
+			hr.border {
+				border: 2px solid $tertiaire-color;
+				width: 40px;
+				margin-left: 0;
+				margin-top: 2;
+			}
+			.list {
+				article {
+					background-color: white;
+					border-radius: 20px;
+					box-shadow: 0px 5px 5px rgb(218, 215, 215);
+					padding: 12px 20px 12px 10px;
+					h3 {
+						margin: 0;
+						font-weight: 500;
+						font-size: 18px;
+					}
+					.dish-detail {
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						p.ingredient {
+							font-weight: 100;
+							font-size: 16px;
+							margin-bottom: 0;
+							margin-top: 5px;
+						}
+						p.price {
+							font-weight: 500;
+							color: rgb(67, 66, 66);
+							margin-bottom: 0;
+							margin-top: 5px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
