@@ -12,30 +12,34 @@ body {
 	margin: auto;
 }
 
-.loader {
-	background-color: #0000ff;
-	position: relative;
-	display: inline-block;
-	width: 50px;
-	height: 50px;
-	vertical-align: middle;
-}
-.loader-quart {
-	border-radius: 50px;
-	border: 6px solid rgba(255, 255, 255, 0.4);
-
-	&:after {
-		content: "";
-		position: absolute;
-		top: -6px;
-		left: -6px;
-		bottom: -6px;
-		right: -6px;
+.loader-section {
+	margin: 30px;
+	@include flex-center();
+	.loader {
+		background-color: $secondary-color;
+		position: relative;
+		display: inline-block;
+		width: 70px;
+		height: 70px;
+		vertical-align: middle;
+	}
+	.loader-quart {
 		border-radius: 50px;
-		border: 6px solid transparent;
-		border-top-color: #fff;
-		// -webkit-animation: spin 1s linear infinite;
-		@include animation("spin 1s linear infinite");
+		border: 6px solid rgba(255, 255, 255, 0.4);
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: -6px;
+			left: -6px;
+			bottom: -6px;
+			right: -6px;
+			border-radius: 50px;
+			border: 6px solid transparent;
+			border-top-color: #fff;
+			// -webkit-animation: spin 1s linear infinite;
+			@include animation("spin 1s linear infinite");
+		}
 	}
 }
 figure.logo-img {
