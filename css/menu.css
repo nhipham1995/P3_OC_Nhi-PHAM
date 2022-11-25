@@ -1,38 +1,111 @@
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
 .card {
   background-color: white;
   width: 20rem;
   overflow: hidden;
   margin: 2rem;
-  -webkit-box-shadow: 5px 5px 5px 5px #000;
-          box-shadow: 5px 5px 5px 5px #000;
+  box-shadow: 5px 5px 5px 5px #000;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
   border-radius: 0.5rem;
   /* using the mixins function */
 }
-
 .card img {
   height: 15rem;
   background-size: cover;
   background-position: center center;
 }
-
 .card .card_content {
   padding: 2rem;
 }
-
 .card .card_title {
   margin: 0;
   color: black;
 }
-
 .card .card_description {
   margin: 0;
   color: #999;
 }
-
 .card_dark {
   background-color: black;
 }
-
 .card_dark .card_title {
   color: white;
 }
@@ -50,35 +123,25 @@ body {
 header .logo {
   position: relative;
 }
-
 header .logo a {
   cursor: pointer;
 }
-
 header .logo a:hover i {
   color: #4a9482;
 }
-
 header .logo a i {
   position: absolute;
   font-size: 20px;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   left: 5%;
-  color: #434343;
+  color: rgb(67, 67, 67);
 }
-
 header .logo figure.logo-img {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin: 0;
 }
-
 header .logo figure.logo-img img {
   margin: 20px auto 15px auto;
   height: 35px;
@@ -87,115 +150,109 @@ header .logo figure.logo-img img {
 main {
   position: relative;
 }
-
 main .img-dish {
   width: 100%;
   overflow: hidden;
 }
-
 main .img-dish figure {
   margin: 0;
 }
-
 main .img-dish figure img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   max-width: 100%;
 }
-
 main .detail {
   position: absolute;
   top: 190px;
   height: 500px;
   width: 100%;
-  background-color: #f8f8f8;
+  background-color: rgb(248, 248, 248);
   border-top-left-radius: 35px;
   border-top-right-radius: 35px;
   padding-top: 10px;
   margin: auto;
 }
-
 main .detail .resto-name {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
-
 main .detail .resto-name h1 {
   font-family: "Shrikhand", cursive, sans-serif;
   font-size: 28px;
   font-weight: 100;
 }
-
 main .detail .resto-name i {
   font-size: 25px;
-  -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
-
 main .detail .resto-name i:hover {
   cursor: pointer;
   background: -webkit-gradient(linear, right top, left bottom, from(#9356dc), to(#ff79da));
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 main .detail section h2 {
   font-weight: 100;
   font-size: 17px;
   margin: 0;
 }
-
 main .detail section hr.border {
   border: 2px solid #99e2d0;
   width: 40px;
   margin-left: 0;
   margin-top: 2;
 }
-
 main .detail section .list article {
   background-color: white;
   border-radius: 20px;
-  -webkit-box-shadow: 0px 5px 5px #dad7d7;
-          box-shadow: 0px 5px 5px #dad7d7;
+  box-shadow: 0px 5px 5px rgb(218, 215, 215);
+}
+main .detail section .list article:hover {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .detail section .list article:hover .checked-part {
+  display: block;
+}
+main .detail section .list article:hover .checked-part i {
+  transform: rotate(0turn);
+}
+main .detail section .list article .item-part {
+  flex-basis: 75%;
   padding: 12px 20px 12px 10px;
 }
-
-main .detail section .list article h3 {
+main .detail section .list article .item-part h3 {
   margin: 0;
   font-weight: 500;
   font-size: 18px;
 }
-
-main .detail section .list article .dish-detail {
-  display: -webkit-box;
-  display: -ms-flexbox;
+main .detail section .list article .item-part .dish-detail {
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
-
-main .detail section .list article .dish-detail p.ingredient {
+main .detail section .list article .item-part .dish-detail p.ingredient {
   font-weight: 100;
-  font-size: 16px;
+  font-size: 15px;
   margin-bottom: 0;
   margin-top: 5px;
+}
+main .detail section .list article .item-part .dish-detail p.price {
+  font-weight: 500;
+  color: rgb(67, 66, 66);
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+main .detail section .list article .checked-part {
+  display: none;
+  background-color: #4a9482;
+  height: 100%;
+}
+main .detail section .list article .checked-part i {
+  transform: rotate(-1turn);
+  transition: transform 500ms ease-in-out;
 }
 
-main .detail section .list article .dish-detail p.price {
-  font-weight: 500;
-  color: #434242;
-  margin-bottom: 0;
-  margin-top: 5px;
-}
 /*# sourceMappingURL=menu.css.map */
