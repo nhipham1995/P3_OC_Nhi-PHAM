@@ -6,12 +6,19 @@
 body {
 	font-family: $roboto;
 	margin: 0;
+	// opacity: 0;
+	transform: translateY(100px);
+	opacity: 0;
+	@include animation("slideUp  ease forwards 1s");
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
 }
 .container {
 	max-width: 90%;
 	margin: auto;
 }
 header .logo {
+	display: block;
 	position: relative;
 	a {
 		cursor: pointer;
@@ -39,7 +46,7 @@ header .logo {
 	}
 }
 main {
-	position: relative;
+	// position: relative;
 	.img-dish {
 		width: 100%;
 		overflow: hidden;
@@ -69,6 +76,7 @@ main {
 				font-family: $shrikhand;
 				font-size: 28px;
 				font-weight: 100;
+				margin-top: 20px;
 			}
 			i {
 				font-size: 25px;
@@ -91,19 +99,19 @@ main {
 			h2 {
 				font-weight: 100;
 				font-size: 17px;
-				margin: 0;
+				margin-top: 40px;
 			}
 			hr.border {
 				border: 2px solid $tertiaire-color;
 				width: 40px;
-				margin-left: 0;
-				margin-top: 2;
+				margin: 2px 0 15px 0;
 			}
 			.list {
 				article {
 					background-color: white;
+					margin-bottom: 18px;
 					border-radius: 20px;
-					box-shadow: 0px 5px 5px rgb(218, 215, 215);
+					box-shadow: 0px 5px 5px rgb(238, 236, 236);
 					&:hover {
 						display: flex;
 						justify-content: space-between;
@@ -122,7 +130,6 @@ main {
 						flex-basis: 75%;
 						padding: 12px 20px 12px 10px;
 						h3 {
-							margin: 0;
 							font-weight: 500;
 							font-size: 18px;
 						}
@@ -157,4 +164,14 @@ main {
 			}
 		}
 	}
+}
+button {
+	margin: 40px auto 40px auto;
+	font-size: 16px;
+	padding: 15px 40px;
+	@include gradientButton;
+}
+footer {
+	@include footerStyle;
+	@include animation("slideUp 1.2s ease forwards .8s");
 }
