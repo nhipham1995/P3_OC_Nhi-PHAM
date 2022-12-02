@@ -278,6 +278,39 @@
     opacity: 1;
   }
 }
+@-webkit-keyframes leftSlide {
+  100% {
+    right: 0;
+  }
+}
+@-moz-keyframes leftSlide {
+  100% {
+    right: 0;
+  }
+}
+@-ms-keyframes leftSlide {
+  100% {
+    right: 0;
+  }
+}
+@-o-keyframes leftSlide {
+  100% {
+    right: 0;
+  }
+}
+@keyframes leftSlide {
+  100% {
+    right: 0;
+  }
+}
+@keyframes animationCheck {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 html,
 body,
@@ -356,40 +389,6 @@ th {
   padding: 0;
 }
 
-.card {
-  background-color: white;
-  width: 20rem;
-  overflow: hidden;
-  margin: 2rem;
-  box-shadow: 5px 5px 5px 5px #000;
-  -webkit-border-radius: 0.5rem;
-  -moz-border-radius: 0.5rem;
-  border-radius: 0.5rem;
-  /* using the mixins function */
-}
-.card img {
-  height: 15rem;
-  background-size: cover;
-  background-position: center center;
-}
-.card .card_content {
-  padding: 2rem;
-}
-.card .card_title {
-  margin: 0;
-  color: black;
-}
-.card .card_description {
-  margin: 0;
-  color: #999;
-}
-.card_dark {
-  background-color: black;
-}
-.card_dark .card_title {
-  color: white;
-}
-
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -437,6 +436,11 @@ header .logo figure.logo-img img {
   height: 35px;
 }
 
+main {
+  display: block;
+  position: relative;
+  height: max-content;
+}
 main .img-dish {
   width: 100%;
   overflow: hidden;
@@ -449,9 +453,8 @@ main .img-dish figure img {
   max-width: 100%;
 }
 main .detail {
-  position: absolute;
-  top: 190px;
-  height: 500px;
+  display: block;
+  transform: translateY(-35px);
   width: 100%;
   background-color: rgb(248, 248, 248);
   border-top-left-radius: 35px;
@@ -470,15 +473,28 @@ main .detail .resto-name h1 {
   font-weight: 100;
   margin-top: 20px;
 }
-main .detail .resto-name i {
-  font-size: 25px;
-  transition: all 0.5s ease-in-out;
-}
-main .detail .resto-name i:hover {
+main .detail .resto-name .heart-icon {
   cursor: pointer;
-  background: -webkit-gradient(linear, right top, left bottom, from(#9356dc), to(#ff79da));
+}
+main .detail .resto-name .heart-icon i.fas.fa-heart.hover {
+  display: none;
+}
+main .detail .resto-name .heart-icon i {
+  font-size: 25px;
+  color: black;
+}
+main .detail .resto-name .heart-icon:hover i.fas.fa-heart.hover {
+  display: block;
+  background: -moz-linear-gradient(top, #ff79da 0%, #9356dc 100%);
+  background: -webkit-linear-gradient(top, #ff79da 0%, #9356dc 100%);
+  background: linear-gradient(to bottom, #ff79da 0%, #9356dc 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+main .detail .resto-name .heart-icon:hover i.far.fa-heart.unhover {
+  display: none;
 }
 main .detail section h2 {
   font-weight: 100;
@@ -490,26 +506,65 @@ main .detail section hr.border {
   width: 40px;
   margin: 2px 0 15px 0;
 }
+main .detail section .list article.article-1 {
+  opacity: 0;
+  transform: translateY(100px);
+  -webkit-animation: slideUp .8s ease forwards .6s;
+  -moz-animation: slideUp .8s ease forwards .6s;
+  -ms-animation: slideUp .8s ease forwards .6s;
+  -o-animation: slideUp .8s ease forwards .6s;
+  animation: slideUp .8s ease forwards .6s;
+}
+main .detail section .list article.article-2 {
+  opacity: 0;
+  transform: translateY(100px);
+  -webkit-animation: slideUp .8s ease forwards .7s;
+  -moz-animation: slideUp .8s ease forwards .7s;
+  -ms-animation: slideUp .8s ease forwards .7s;
+  -o-animation: slideUp .8s ease forwards .7s;
+  animation: slideUp .8s ease forwards .7s;
+}
+main .detail section .list article.article-3 {
+  opacity: 0;
+  transform: translateY(100px);
+  -webkit-animation: slideUp .8s ease forwards .8s;
+  -moz-animation: slideUp .8s ease forwards .8s;
+  -ms-animation: slideUp .8s ease forwards .8s;
+  -o-animation: slideUp .8s ease forwards .8s;
+  animation: slideUp .8s ease forwards .8s;
+}
 main .detail section .list article {
+  position: relative;
+  overflow: hidden;
   background-color: white;
   margin-bottom: 18px;
   border-radius: 20px;
   box-shadow: 0px 5px 5px rgb(238, 236, 236);
 }
-main .detail section .list article:hover {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+main .detail section .list article .checked-part {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin: auto;
+  background-color: #99e2d0;
+  height: 100%;
+  display: none;
 }
-main .detail section .list article:hover .checked-part {
-  display: block;
-}
-main .detail section .list article:hover .checked-part i {
-  transform: rotate(0turn);
+main .detail section .list article .checked-part i.fas.fa-check {
+  font-size: 25px;
+  color: #99e2d0;
+  background-color: white;
+  padding: 5px;
+  border-radius: 100%;
+  -webkit-transition: "transform 2.5s";
+  -moz-transition: "transform 2.5s";
+  -ms-transition: "transform 2.5s";
+  -o-transition: "transform 2.5s";
+  transition: "transform 2.5s";
+  transform: rotate(0deg);
 }
 main .detail section .list article .item-part {
-  flex-basis: 75%;
-  padding: 12px 20px 12px 10px;
+  padding: 20px 15px 20px 10px;
+  cursor: pointer;
 }
 main .detail section .list article .item-part h3 {
   font-weight: 500;
@@ -532,18 +587,44 @@ main .detail section .list article .item-part .dish-detail p.price {
   margin-bottom: 0;
   margin-top: 5px;
 }
-main .detail section .list article .checked-part {
-  display: none;
-  background-color: #4a9482;
-  height: 100%;
+main .detail section .list article:hover {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-main .detail section .list article .checked-part i {
-  transform: rotate(-1turn);
-  transition: transform 500ms ease-in-out;
+main .detail section .list article:hover .checked-part {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  margin: 0 auto;
+  position: absolute;
+  right: -80px;
+  -webkit-animation: leftSlide 1s forwards;
+  -moz-animation: leftSlide 1s forwards;
+  -ms-animation: leftSlide 1s forwards;
+  -o-animation: leftSlide 1s forwards;
+  animation: leftSlide 1s forwards;
+}
+main .detail section .list article:hover .checked-part i.fas.fa-check {
+  -webkit-animation: animationCheck .6s ease-in;
+  -moz-animation: animationCheck .6s ease-in;
+  -ms-animation: animationCheck .6s ease-in;
+  -o-animation: animationCheck .6s ease-in;
+  animation: animationCheck .6s ease-in;
+}
+main .detail section .list article:hover .item-part {
+  width: 100%;
+  padding: 20px 2px 20px 10px;
+}
+main .detail section .list article:hover .item-part .dish-detail {
+  margin-right: 90px;
+  transition: all 0.5s;
 }
 
 button {
-  margin: 40px auto 40px auto;
+  display: block;
+  margin: 0 auto 40px auto;
   font-size: 16px;
   padding: 15px 40px;
   color: white;
@@ -554,7 +635,8 @@ button {
   border: none;
   box-shadow: 0px 5px 15px rgb(179, 179, 179);
   cursor: pointer;
-  transform: scale(1);
+  transition: all 0.4s ease-in-out;
+  transform: scale(0.95);
 }
 button:hover {
   transform: scale(1.01);
@@ -563,6 +645,7 @@ button:hover {
 }
 
 footer {
+  z-index: 100;
   transform: translateY(100px);
   opacity: 0;
   background-color: rgb(67, 67, 67);

@@ -1,0 +1,106 @@
+// This helps to adapt smoothly with others browsers
+@mixin keyframes($name-animation) {
+	@-webkit-keyframes #{$name-animation} {
+		@content;
+	}
+	@-moz-keyframes #{$name-animation} {
+		@content;
+	}
+	@-ms-keyframes #{$name-animation} {
+		@content;
+	}
+	@-o-keyframes #{$name-animation} {
+		@content;
+	}
+	@keyframes #{$name-animation} {
+		@content;
+	}
+}
+
+@mixin animation($str) {
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+	animation: #{$str};
+}
+
+@include keyframes(spin) {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@include keyframes(fadeOutAnimation) {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		display: none;
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+}
+@include keyframes(fadeInAnimation) {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		position: relative;
+	}
+}
+@include keyframes(expand) {
+	0% {
+		transform: translateY(1400px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+@include keyframes(slideIn) {
+	0% {
+		transform: translateX(500px) scale(0.2);
+	}
+	100% {
+		transform: translateX(0px) scale(1);
+	}
+}
+
+@include keyframes(slideUp) {
+	0% {
+		transform: translateY(100px);
+	}
+	100% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+@include keyframes(leftSlide) {
+	100% {
+		right: 0;
+	}
+}
+@keyframes animationCheck {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@mixin transition($x...) {
+	-webkit-transition: $x;
+	-moz-transition: $x;
+	-ms-transition: $x;
+	-o-transition: $x;
+	transition: $x;
+}

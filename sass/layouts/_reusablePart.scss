@@ -1,0 +1,71 @@
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+}
+@mixin h2-style {
+	font-size: 22px;
+	color: black;
+	font-weight: 500;
+}
+@mixin defaultHover {
+	transform: scale(1.01);
+	transition-property: transform;
+	transition-duration: 400ms;
+}
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+@mixin gradientButton {
+	color: white;
+	@include flex-center;
+	border-radius: 50px;
+	background: linear-gradient($secondary-color, $primary-color);
+	border: none;
+	box-shadow: 0px 5px 15px rgb(179, 179, 179);
+	cursor: pointer;
+	transition: all 0.4s ease-in-out;
+	transform: scale(0.95);
+	&:hover {
+		@include defaultHover;
+	}
+}
+@mixin heartIcon {
+	cursor: pointer;
+	i.fas.fa-heart.hover {
+		display: none;
+	}
+
+	i {
+		font-size: 25px;
+		color: black;
+	}
+	&:hover {
+		i.fas.fa-heart.hover {
+			display: block;
+			background: -moz-linear-gradient(
+				top,
+				$secondary-color 0%,
+				$primary-color 100%
+			);
+			background: -webkit-linear-gradient(
+				top,
+				$secondary-color 0%,
+				$primary-color 100%
+			);
+			background: linear-gradient(
+				to bottom,
+				$secondary-color 0%,
+				$primary-color 100%
+			);
+			-webkit-background-clip: text;
+			-moz-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+		i.far.fa-heart.unhover {
+			display: none;
+		}
+	}
+}

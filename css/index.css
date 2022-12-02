@@ -278,6 +278,39 @@
     opacity: 1;
   }
 }
+@-webkit-keyframes leftSlide {
+  100% {
+    right: 0;
+  }
+}
+@-moz-keyframes leftSlide {
+  100% {
+    right: 0;
+  }
+}
+@-ms-keyframes leftSlide {
+  100% {
+    right: 0;
+  }
+}
+@-o-keyframes leftSlide {
+  100% {
+    right: 0;
+  }
+}
+@keyframes leftSlide {
+  100% {
+    right: 0;
+  }
+}
+@keyframes animationCheck {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 html,
 body,
@@ -354,40 +387,6 @@ table {
 td,
 th {
   padding: 0;
-}
-
-.card {
-  background-color: white;
-  width: 20rem;
-  overflow: hidden;
-  margin: 2rem;
-  box-shadow: 5px 5px 5px 5px #000;
-  -webkit-border-radius: 0.5rem;
-  -moz-border-radius: 0.5rem;
-  border-radius: 0.5rem;
-  /* using the mixins function */
-}
-.card img {
-  height: 15rem;
-  background-size: cover;
-  background-position: center center;
-}
-.card .card_content {
-  padding: 2rem;
-}
-.card .card_title {
-  margin: 0;
-  color: black;
-}
-.card .card_description {
-  margin: 0;
-  color: #999;
-}
-.card_dark {
-  background-color: black;
-}
-.card_dark .card_title {
-  color: white;
 }
 
 body {
@@ -526,7 +525,8 @@ figure.logo-img img {
   border: none;
   box-shadow: 0px 5px 15px rgb(179, 179, 179);
   cursor: pointer;
-  transform: scale(1);
+  transition: all 0.4s ease-in-out;
+  transform: scale(0.95);
 }
 .presentation-part div button:hover {
   transform: scale(1.01);
@@ -628,6 +628,7 @@ section.restaurant-list .container div article.restaurant-item {
   margin-bottom: 30px;
   cursor: pointer;
   transform: scale(1);
+  transition: all 0.4s ease-in-out;
 }
 section.restaurant-list .container div article.restaurant-item:hover {
   transform: scale(1.01);
@@ -681,17 +682,28 @@ section.restaurant-list .container div article.restaurant-item .card-body .card-
   margin: 5px 0 10px 0;
   font-weight: 200;
 }
-section.restaurant-list .container div article.restaurant-item .card-body i {
+section.restaurant-list .container div article.restaurant-item .card-body .heart-icon {
+  cursor: pointer;
+}
+section.restaurant-list .container div article.restaurant-item .card-body .heart-icon i.fas.fa-heart.hover {
+  display: none;
+}
+section.restaurant-list .container div article.restaurant-item .card-body .heart-icon i {
   font-size: 25px;
-  transition: all 0.4s ease-in-out;
   color: black;
 }
-section.restaurant-list .container div article.restaurant-item .card-body i:hover {
-  cursor: pointer;
-  background-color: -webkit-gradient(linear, right top, left bottom, from(#9356dc), to(#ff79da)) !important;
+section.restaurant-list .container div article.restaurant-item .card-body .heart-icon:hover i.fas.fa-heart.hover {
+  display: block;
+  background: -moz-linear-gradient(top, #ff79da 0%, #9356dc 100%);
+  background: -webkit-linear-gradient(top, #ff79da 0%, #9356dc 100%);
+  background: linear-gradient(to bottom, #ff79da 0%, #9356dc 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
+}
+section.restaurant-list .container div article.restaurant-item .card-body .heart-icon:hover i.far.fa-heart.unhover {
+  display: none;
 }
 
 footer {

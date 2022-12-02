@@ -1,7 +1,9 @@
 @import "libs/variables";
 @import "libs/mixins";
 @import "libs/reset.scss";
-@import "card";
+@import "layouts/footer";
+@import "utils/animation";
+@import "layouts/reusablePart";
 
 body {
 	font-family: $roboto;
@@ -187,6 +189,7 @@ section.restaurant-list {
 			margin-bottom: 30px;
 			cursor: pointer;
 			transform: scale(1);
+			transition: all 0.4s ease-in-out;
 			&:hover {
 				@include defaultHover;
 				.card-body {
@@ -239,27 +242,44 @@ section.restaurant-list {
 						font-weight: 200;
 					}
 				}
-				i {
-					// .fa-heart g g path {
-					// 	stroke: red;
-					// 	stroke-width: 10;
+				.heart-icon {
+					@include heartIcon;
+					// cursor: pointer;
+					// i.fas.fa-heart.hover {
+					// 	display: none;
 					// }
-					font-size: 25px;
-					transition: all 0.4s ease-in-out;
-					color: black;
-					&:hover {
-						cursor: pointer;
-						background-color: -webkit-gradient(
-							linear,
-							right top,
-							left bottom,
-							from($primary-color),
-							to($secondary-color)
-						) !important;
-						background-clip: text;
-						-webkit-text-fill-color: transparent;
-						-webkit-background-clip: text;
-					}
+
+					// i {
+					// 	font-size: 25px;
+					// 	color: black;
+					// }
+					// &:hover {
+					// 	i.fas.fa-heart.hover {
+					// 		display: block;
+					// 		background: -moz-linear-gradient(
+					// 			top,
+					// 			$secondary-color 0%,
+					// 			$primary-color 100%
+					// 		);
+					// 		background: -webkit-linear-gradient(
+					// 			top,
+					// 			$secondary-color 0%,
+					// 			$primary-color 100%
+					// 		);
+					// 		background: linear-gradient(
+					// 			to bottom,
+					// 			$secondary-color 0%,
+					// 			$primary-color 100%
+					// 		);
+					// 		-webkit-background-clip: text;
+					// 		-moz-background-clip: text;
+					// 		background-clip: text;
+					// 		-webkit-text-fill-color: transparent;
+					// 	}
+					// 	i.far.fa-heart.unhover {
+					// 		display: none;
+					// 	}
+					// }
 				}
 			}
 		}

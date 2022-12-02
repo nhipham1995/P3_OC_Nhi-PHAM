@@ -1,12 +1,13 @@
 @import "libs/variables";
 @import "libs/mixins";
 @import "libs/reset.scss";
-@import "card";
+@import "layouts/footer";
+@import "utils/animation";
+@import "layouts/reusablePart";
 
 body {
 	font-family: $roboto;
 	margin: 0;
-	// opacity: 0;
 	transform: translateY(100px);
 	opacity: 0;
 	@include animation("slideUp  ease forwards 1s");
@@ -46,7 +47,9 @@ header .logo {
 	}
 }
 main {
-	// position: relative;
+	display: block;
+	position: relative;
+	height: max-content;
 	.img-dish {
 		width: 100%;
 		overflow: hidden;
@@ -59,9 +62,8 @@ main {
 		}
 	}
 	.detail {
-		position: absolute;
-		top: 190px;
-		height: 500px;
+		display: block;
+		transform: translateY(-35px);
 		width: 100%;
 		background-color: rgb(248, 248, 248);
 		border-top-left-radius: 35px;
@@ -78,21 +80,8 @@ main {
 				font-weight: 100;
 				margin-top: 20px;
 			}
-			i {
-				font-size: 25px;
-				transition: all 0.5s ease-in-out;
-				&:hover {
-					cursor: pointer;
-					background: -webkit-gradient(
-						linear,
-						right top,
-						left bottom,
-						from($primary-color),
-						to($secondary-color)
-					);
-					background-clip: text;
-					-webkit-text-fill-color: transparent;
-				}
+			.heart-icon {
+				@include heartIcon;
 			}
 		}
 		section {
@@ -107,28 +96,49 @@ main {
 				margin: 2px 0 15px 0;
 			}
 			.list {
+				article.article-1 {
+					opacity: 0;
+					transform: translateY(100px);
+					@include animation("slideUp .8s ease forwards .6s");
+				}
+				article.article-2 {
+					opacity: 0;
+					transform: translateY(100px);
+					@include animation("slideUp .8s ease forwards .7s");
+				}
+				article.article-3 {
+					opacity: 0;
+					transform: translateY(100px);
+					@include animation("slideUp .8s ease forwards .8s");
+				}
+
 				article {
+					position: relative;
+					overflow: hidden;
 					background-color: white;
 					margin-bottom: 18px;
 					border-radius: 20px;
 					box-shadow: 0px 5px 5px rgb(238, 236, 236);
-					&:hover {
-						display: flex;
-						justify-content: space-between;
-						align-items: center;
-						.checked-part {
-							display: block;
-							i {
-								transform: rotate(0turn);
-							}
-							// background-color: #4a9482;
-							// width: 20px;
-							// height: 100%;
-						}
+					.checked-part {
+						border-top-right-radius: 20px;
+						border-bottom-right-radius: 20px;
+						margin: auto;
+						background-color: $tertiaire-color;
+						height: 100%;
+						display: none;
+					}
+					.checked-part i.fas.fa-check {
+						font-size: 25px;
+						color: $tertiaire-color;
+						background-color: white;
+						padding: 5px;
+						border-radius: 100%;
+						@include transition("transform 2.5s");
+						transform: rotate(0deg);
 					}
 					.item-part {
-						flex-basis: 75%;
-						padding: 12px 20px 12px 10px;
+						padding: 20px 15px 20px 10px;
+						cursor: pointer;
 						h3 {
 							font-weight: 500;
 							font-size: 18px;
@@ -137,6 +147,7 @@ main {
 							display: flex;
 							justify-content: space-between;
 							align-items: center;
+
 							p.ingredient {
 								font-weight: 100;
 								font-size: 15px;
@@ -151,13 +162,32 @@ main {
 							}
 						}
 					}
-					.checked-part {
-						display: none;
-						background-color: #4a9482;
-						height: 100%;
-						i {
-							transform: rotate(-1turn);
-							transition: transform 500ms ease-in-out;
+					&:hover {
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						.checked-part {
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							width: 80px;
+							margin: 0 auto;
+							position: absolute;
+							right: -80px;
+							@include animation("leftSlide 1s forwards");
+							i.fas.fa-check {
+								@include animation(
+									"animationCheck .6s ease-in"
+								);
+							}
+						}
+						.item-part {
+							width: 100%;
+							padding: 20px 2px 20px 10px;
+							.dish-detail {
+								margin-right: 90px;
+								transition: all 0.5s;
+							}
 						}
 					}
 				}
@@ -166,12 +196,14 @@ main {
 	}
 }
 button {
-	margin: 40px auto 40px auto;
+	display: block;
+	margin: 0 auto 40px auto;
 	font-size: 16px;
 	padding: 15px 40px;
 	@include gradientButton;
 }
 footer {
+	z-index: 100;
 	@include footerStyle;
 	@include animation("slideUp 1.2s ease forwards .8s");
 }
