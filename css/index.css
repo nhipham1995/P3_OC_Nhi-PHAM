@@ -1,3 +1,81 @@
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -303,92 +381,109 @@
     right: 0;
   }
 }
-@keyframes animationCheck {
+@-webkit-keyframes rightSlide {
   0% {
-    transform: rotate(0deg);
+    opacity: 1;
+    right: 0px;
+    width: 80px;
+    display: flex;
+  }
+  50% {
+    opacity: 0.5;
+    right: 40px;
   }
   100% {
+    right: 80px;
+    opacity: 0;
+    width: 0px;
+    display: none;
+  }
+}
+@-moz-keyframes rightSlide {
+  0% {
+    opacity: 1;
+    right: 0px;
+    width: 80px;
+    display: flex;
+  }
+  50% {
+    opacity: 0.5;
+    right: 40px;
+  }
+  100% {
+    right: 80px;
+    opacity: 0;
+    width: 0px;
+    display: none;
+  }
+}
+@-ms-keyframes rightSlide {
+  0% {
+    opacity: 1;
+    right: 0px;
+    width: 80px;
+    display: flex;
+  }
+  50% {
+    opacity: 0.5;
+    right: 40px;
+  }
+  100% {
+    right: 80px;
+    opacity: 0;
+    width: 0px;
+    display: none;
+  }
+}
+@-o-keyframes rightSlide {
+  0% {
+    opacity: 1;
+    right: 0px;
+    width: 80px;
+    display: flex;
+  }
+  50% {
+    opacity: 0.5;
+    right: 40px;
+  }
+  100% {
+    right: 80px;
+    opacity: 0;
+    width: 0px;
+    display: none;
+  }
+}
+@keyframes rightSlide {
+  0% {
+    opacity: 1;
+    right: 0px;
+    width: 80px;
+    display: flex;
+  }
+  50% {
+    opacity: 0.5;
+    right: 40px;
+  }
+  100% {
+    right: 80px;
+    opacity: 0;
+    width: 0px;
+    display: none;
+  }
+}
+@keyframes animationCheck {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
     transform: rotate(360deg);
   }
 }
-/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
-html,
-body,
-p,
-ol,
-ul,
-li,
-dl,
-dt,
-dd,
-blockquote,
-figure,
-fieldset,
-legend,
-textarea,
-pre,
-iframe,
-hr,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 100%;
-  font-weight: normal;
-}
-
-ul {
-  list-style: none;
-}
-
-button,
-input,
-select {
-  margin: 0;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-img,
-video {
-  height: auto;
-  max-width: 100%;
-}
-
-iframe {
-  border: 0;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-td,
-th {
-  padding: 0;
-}
-
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -551,6 +646,15 @@ section.function-part {
   -o-animation: slideUp .8s ease forwards 3.4s;
   animation: slideUp .8s ease forwards 3.4s;
 }
+@media (min-width: 1080px) {
+  section.function-part .container .functions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 15px;
+  }
+}
 section.function-part .container .functions article {
   position: relative;
   background-color: rgb(248, 248, 248);
@@ -561,6 +665,11 @@ section.function-part .container .functions article {
   transition: all 0.4s ease-in-out;
   cursor: pointer;
   transform: scale(1);
+}
+@media (min-width: 1080px) {
+  section.function-part .container .functions article {
+    flex: 25%;
+  }
 }
 section.function-part .container .functions article:hover {
   background-color: #f9f1fe;
@@ -621,7 +730,16 @@ section.restaurant-list .container {
   padding-top: 1px;
   padding-bottom: 50px;
 }
-section.restaurant-list .container div article.restaurant-item {
+@media (min-width: 768px) {
+  section.restaurant-list .container .restaurants {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+section.restaurant-list .container .restaurants article.restaurant-item {
   box-shadow: 0px 5px 15px rgb(226, 225, 225);
   border-radius: 15px;
   position: relative;
@@ -630,15 +748,25 @@ section.restaurant-list .container div article.restaurant-item {
   transform: scale(1);
   transition: all 0.4s ease-in-out;
 }
-section.restaurant-list .container div article.restaurant-item:hover {
+@media (min-width: 768px) {
+  section.restaurant-list .container .restaurants article.restaurant-item {
+    flex: 42%;
+    margin-bottom: 0px;
+  }
+}
+section.restaurant-list .container .restaurants article.restaurant-item:hover {
   transform: scale(1.01);
   transition-property: transform;
   transition-duration: 400ms;
 }
-section.restaurant-list .container div article.restaurant-item:hover .card-body {
+section.restaurant-list .container .restaurants article.restaurant-item:hover .card-body {
   background-color: #f9f1fe;
 }
-section.restaurant-list .container div article.restaurant-item .new-tag {
+section.restaurant-list .container .restaurants article.restaurant-item a {
+  text-decoration: none;
+  color: black;
+}
+section.restaurant-list .container .restaurants article.restaurant-item a .new-tag {
   position: absolute;
   right: 3%;
   top: 4%;
@@ -649,12 +777,12 @@ section.restaurant-list .container div article.restaurant-item .new-tag {
   font-weight: 400;
   color: #048361;
 }
-section.restaurant-list .container div article.restaurant-item figure.card-img {
+section.restaurant-list .container .restaurants article.restaurant-item a figure.card-img {
   margin: 0;
   height: 200px;
   overflow: hidden;
 }
-section.restaurant-list .container div article.restaurant-item figure.card-img img {
+section.restaurant-list .container .restaurants article.restaurant-item a figure.card-img img {
   max-width: 100%;
   overflow: hidden;
   border-top-left-radius: 15px;
@@ -662,7 +790,7 @@ section.restaurant-list .container div article.restaurant-item figure.card-img i
   object-fit: fill;
   margin: 0;
 }
-section.restaurant-list .container div article.restaurant-item .card-body {
+section.restaurant-list .container .restaurants article.restaurant-item a .card-body {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -671,28 +799,32 @@ section.restaurant-list .container div article.restaurant-item .card-body {
   border-bottom-right-radius: 15px;
   padding: 5px 15px;
 }
-section.restaurant-list .container div article.restaurant-item .card-body .card-content h3.card-title {
+section.restaurant-list .container .restaurants article.restaurant-item a .card-body .card-content h3.card-title {
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 5px;
   margin-top: 8px;
 }
-section.restaurant-list .container div article.restaurant-item .card-body .card-content p.card-des {
+section.restaurant-list .container .restaurants article.restaurant-item a .card-body .card-content p.card-des {
   font-size: 16.8px;
   margin: 5px 0 10px 0;
   font-weight: 200;
 }
-section.restaurant-list .container div article.restaurant-item .card-body .heart-icon {
+section.restaurant-list .container .restaurants article.restaurant-item a .card-body .heart-icon {
   cursor: pointer;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-section.restaurant-list .container div article.restaurant-item .card-body .heart-icon i.fas.fa-heart.hover {
+section.restaurant-list .container .restaurants article.restaurant-item a .card-body .heart-icon i.fas.fa-heart.hover {
   display: none;
 }
-section.restaurant-list .container div article.restaurant-item .card-body .heart-icon i {
+section.restaurant-list .container .restaurants article.restaurant-item a .card-body .heart-icon i {
   font-size: 25px;
   color: black;
 }
-section.restaurant-list .container div article.restaurant-item .card-body .heart-icon:hover i.fas.fa-heart.hover {
+section.restaurant-list .container .restaurants article.restaurant-item a .card-body .heart-icon:hover i.fas.fa-heart.hover {
   display: block;
   background: -moz-linear-gradient(top, #ff79da 0%, #9356dc 100%);
   background: -webkit-linear-gradient(top, #ff79da 0%, #9356dc 100%);
@@ -702,7 +834,7 @@ section.restaurant-list .container div article.restaurant-item .card-body .heart
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-section.restaurant-list .container div article.restaurant-item .card-body .heart-icon:hover i.far.fa-heart.unhover {
+section.restaurant-list .container .restaurants article.restaurant-item a .card-body .heart-icon:hover i.far.fa-heart.unhover {
   display: none;
 }
 

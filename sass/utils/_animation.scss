@@ -89,11 +89,34 @@
 		right: 0;
 	}
 }
-@keyframes animationCheck {
+@include keyframes(rightSlide) {
 	0% {
-		transform: rotate(0deg);
+		opacity: 1;
+		right: 0px;
+		width: 80px;
+		display: flex;
+	}
+	50% {
+		opacity: 0.5;
+		right: 40px;
 	}
 	100% {
+		right: 80px;
+		opacity: 0;
+		width: 0px;
+		display: none;
+	}
+}
+@keyframes animationCheck {
+	0% {
+		opacity: 0;
+		transform: rotate(0deg);
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 		transform: rotate(360deg);
 	}
 }

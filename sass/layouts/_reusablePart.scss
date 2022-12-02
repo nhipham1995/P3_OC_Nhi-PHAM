@@ -36,7 +36,10 @@
 	i.fas.fa-heart.hover {
 		display: none;
 	}
-
+	width: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	i {
 		font-size: 25px;
 		color: black;

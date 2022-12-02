@@ -1,3 +1,81 @@
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -303,92 +381,109 @@
     right: 0;
   }
 }
-@keyframes animationCheck {
+@-webkit-keyframes rightSlide {
   0% {
-    transform: rotate(0deg);
+    opacity: 1;
+    right: 0px;
+    width: 80px;
+    display: flex;
+  }
+  50% {
+    opacity: 0.5;
+    right: 40px;
   }
   100% {
+    right: 80px;
+    opacity: 0;
+    width: 0px;
+    display: none;
+  }
+}
+@-moz-keyframes rightSlide {
+  0% {
+    opacity: 1;
+    right: 0px;
+    width: 80px;
+    display: flex;
+  }
+  50% {
+    opacity: 0.5;
+    right: 40px;
+  }
+  100% {
+    right: 80px;
+    opacity: 0;
+    width: 0px;
+    display: none;
+  }
+}
+@-ms-keyframes rightSlide {
+  0% {
+    opacity: 1;
+    right: 0px;
+    width: 80px;
+    display: flex;
+  }
+  50% {
+    opacity: 0.5;
+    right: 40px;
+  }
+  100% {
+    right: 80px;
+    opacity: 0;
+    width: 0px;
+    display: none;
+  }
+}
+@-o-keyframes rightSlide {
+  0% {
+    opacity: 1;
+    right: 0px;
+    width: 80px;
+    display: flex;
+  }
+  50% {
+    opacity: 0.5;
+    right: 40px;
+  }
+  100% {
+    right: 80px;
+    opacity: 0;
+    width: 0px;
+    display: none;
+  }
+}
+@keyframes rightSlide {
+  0% {
+    opacity: 1;
+    right: 0px;
+    width: 80px;
+    display: flex;
+  }
+  50% {
+    opacity: 0.5;
+    right: 40px;
+  }
+  100% {
+    right: 80px;
+    opacity: 0;
+    width: 0px;
+    display: none;
+  }
+}
+@keyframes animationCheck {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
     transform: rotate(360deg);
   }
 }
-/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
-html,
-body,
-p,
-ol,
-ul,
-li,
-dl,
-dt,
-dd,
-blockquote,
-figure,
-fieldset,
-legend,
-textarea,
-pre,
-iframe,
-hr,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 100%;
-  font-weight: normal;
-}
-
-ul {
-  list-style: none;
-}
-
-button,
-input,
-select {
-  margin: 0;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-img,
-video {
-  height: auto;
-  max-width: 100%;
-}
-
-iframe {
-  border: 0;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-td,
-th {
-  padding: 0;
-}
-
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -466,6 +561,13 @@ main .detail .resto-name {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  opacity: 0;
+  transform: translateY(100px);
+  -webkit-animation: slideUp .8s ease forwards .45s;
+  -moz-animation: slideUp .8s ease forwards .45s;
+  -ms-animation: slideUp .8s ease forwards .45s;
+  -o-animation: slideUp .8s ease forwards .45s;
+  animation: slideUp .8s ease forwards .45s;
 }
 main .detail .resto-name h1 {
   font-family: "Shrikhand", cursive, sans-serif;
@@ -475,6 +577,10 @@ main .detail .resto-name h1 {
 }
 main .detail .resto-name .heart-icon {
   cursor: pointer;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 main .detail .resto-name .heart-icon i.fas.fa-heart.hover {
   display: none;
@@ -500,11 +606,25 @@ main .detail section h2 {
   font-weight: 100;
   font-size: 17px;
   margin-top: 40px;
+  transform: translateY(100px);
+  opacity: 0;
+  -webkit-animation: slideUp .8s ease forwards .5s;
+  -moz-animation: slideUp .8s ease forwards .5s;
+  -ms-animation: slideUp .8s ease forwards .5s;
+  -o-animation: slideUp .8s ease forwards .5s;
+  animation: slideUp .8s ease forwards .5s;
 }
 main .detail section hr.border {
   border: 2px solid #99e2d0;
   width: 40px;
   margin: 2px 0 15px 0;
+  transform: translateY(100px);
+  opacity: 0;
+  -webkit-animation: slideUp .8s ease forwards .5s;
+  -moz-animation: slideUp .8s ease forwards .5s;
+  -ms-animation: slideUp .8s ease forwards .5s;
+  -o-animation: slideUp .8s ease forwards .5s;
+  animation: slideUp .8s ease forwards .5s;
 }
 main .detail section .list article.article-1 {
   opacity: 0;
@@ -518,20 +638,20 @@ main .detail section .list article.article-1 {
 main .detail section .list article.article-2 {
   opacity: 0;
   transform: translateY(100px);
-  -webkit-animation: slideUp .8s ease forwards .7s;
-  -moz-animation: slideUp .8s ease forwards .7s;
-  -ms-animation: slideUp .8s ease forwards .7s;
-  -o-animation: slideUp .8s ease forwards .7s;
-  animation: slideUp .8s ease forwards .7s;
+  -webkit-animation: slideUp .8s ease forwards .75s;
+  -moz-animation: slideUp .8s ease forwards .75s;
+  -ms-animation: slideUp .8s ease forwards .75s;
+  -o-animation: slideUp .8s ease forwards .75s;
+  animation: slideUp .8s ease forwards .75s;
 }
 main .detail section .list article.article-3 {
   opacity: 0;
   transform: translateY(100px);
-  -webkit-animation: slideUp .8s ease forwards .8s;
-  -moz-animation: slideUp .8s ease forwards .8s;
-  -ms-animation: slideUp .8s ease forwards .8s;
-  -o-animation: slideUp .8s ease forwards .8s;
-  animation: slideUp .8s ease forwards .8s;
+  -webkit-animation: slideUp .8s ease forwards .9s;
+  -moz-animation: slideUp .8s ease forwards .9s;
+  -ms-animation: slideUp .8s ease forwards .9s;
+  -o-animation: slideUp .8s ease forwards .9s;
+  animation: slideUp .8s ease forwards .9s;
 }
 main .detail section .list article {
   position: relative;
@@ -547,7 +667,14 @@ main .detail section .list article .checked-part {
   margin: auto;
   background-color: #99e2d0;
   height: 100%;
-  display: none;
+  width: 0;
+  position: absolute;
+  transition: all 0.5s;
+  -webkit-animation: rightSlide .6s ease-in;
+  -moz-animation: rightSlide .6s ease-in;
+  -ms-animation: rightSlide .6s ease-in;
+  -o-animation: rightSlide .6s ease-in;
+  animation: rightSlide .6s ease-in;
 }
 main .detail section .list article .checked-part i.fas.fa-check {
   font-size: 25px;
@@ -555,11 +682,6 @@ main .detail section .list article .checked-part i.fas.fa-check {
   background-color: white;
   padding: 5px;
   border-radius: 100%;
-  -webkit-transition: "transform 2.5s";
-  -moz-transition: "transform 2.5s";
-  -ms-transition: "transform 2.5s";
-  -o-transition: "transform 2.5s";
-  transition: "transform 2.5s";
   transform: rotate(0deg);
 }
 main .detail section .list article .item-part {
@@ -574,6 +696,8 @@ main .detail section .list article .item-part .dish-detail {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-right: 0;
+  transition: all 0.5s;
 }
 main .detail section .list article .item-part .dish-detail p.ingredient {
   font-weight: 100;

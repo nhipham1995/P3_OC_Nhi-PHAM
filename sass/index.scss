@@ -4,6 +4,7 @@
 @import "layouts/footer";
 @import "utils/animation";
 @import "layouts/reusablePart";
+@import "utils/mediaQuerry";
 
 body {
 	font-family: $roboto;
@@ -117,6 +118,13 @@ section.function-part {
 	opacity: 0;
 	@include animation("slideUp .8s ease forwards 3.4s");
 	.container .functions {
+		@include xlarge {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			flex-direction: row;
+			gap: 15px;
+		}
 		article {
 			position: relative;
 			background-color: rgb(248, 248, 248);
@@ -125,9 +133,11 @@ section.function-part {
 			margin: 20px 0px 20px 15px;
 			box-shadow: 5px 5px 5px rgb(223, 222, 222);
 			transition: all 0.4s ease-in-out;
-
 			cursor: pointer;
 			transform: scale(1);
+			@include xlarge {
+				flex: 25%;
+			}
 			&:hover {
 				background-color: #f9f1fe;
 				@include defaultHover;
@@ -182,104 +192,85 @@ section.restaurant-list {
 	.container {
 		padding-top: 1px;
 		padding-bottom: 50px;
-		div article.restaurant-item {
-			box-shadow: 0px 5px 15px rgb(226, 225, 225);
-			border-radius: 15px;
-			position: relative;
-			margin-bottom: 30px;
-			cursor: pointer;
-			transform: scale(1);
-			transition: all 0.4s ease-in-out;
-			&:hover {
-				@include defaultHover;
-				.card-body {
-					background-color: #f9f1fe;
-				}
-			}
-			.new-tag {
-				position: absolute;
-				right: 3%;
-				top: 4%;
-				padding: 6px 10px;
-				background-color: $tertiaire-color;
-				border-radius: 3px;
-				font-size: 14px;
-				font-weight: 400;
-				color: #048361;
-			}
-			figure.card-img {
-				margin: 0;
-				height: 200px;
-				overflow: hidden;
-				img {
-					max-width: 100%;
-					overflow: hidden;
-					border-top-left-radius: 15px;
-					border-top-right-radius: 15px;
-					object-fit: fill;
-					margin: 0;
-				}
-			}
-			.card-body {
+		.restaurants {
+			@include large {
 				display: flex;
+				flex-wrap: wrap;
 				justify-content: space-between;
-				align-items: center;
-				background-color: white;
-				border-bottom-left-radius: 15px;
-				border-bottom-right-radius: 15px;
-				padding: 5px 15px;
-
-				.card-content {
-					h3.card-title {
-						font-size: 18px;
-						font-weight: 500;
-						margin-bottom: 5px;
-						margin-top: 8px;
-					}
-					p.card-des {
-						font-size: 16.8px;
-						margin: 5px 0 10px 0;
-						font-weight: 200;
+				flex-direction: row;
+				gap: 20px;
+			}
+			article.restaurant-item {
+				@include large {
+					flex: 42%;
+					margin-bottom: 0px;
+				}
+				box-shadow: 0px 5px 15px rgb(226, 225, 225);
+				border-radius: 15px;
+				position: relative;
+				margin-bottom: 30px;
+				cursor: pointer;
+				transform: scale(1);
+				transition: all 0.4s ease-in-out;
+				&:hover {
+					@include defaultHover;
+					.card-body {
+						background-color: #f9f1fe;
 					}
 				}
-				.heart-icon {
-					@include heartIcon;
-					// cursor: pointer;
-					// i.fas.fa-heart.hover {
-					// 	display: none;
-					// }
+				a {
+					text-decoration: none;
+					color: black;
+					.new-tag {
+						position: absolute;
+						right: 3%;
+						top: 4%;
+						padding: 6px 10px;
+						background-color: $tertiaire-color;
+						border-radius: 3px;
+						font-size: 14px;
+						font-weight: 400;
+						color: #048361;
+					}
+					figure.card-img {
+						margin: 0;
+						height: 200px;
+						overflow: hidden;
+						img {
+							max-width: 100%;
+							overflow: hidden;
+							border-top-left-radius: 15px;
+							border-top-right-radius: 15px;
+							object-fit: fill;
+							margin: 0;
+						}
+					}
+					.card-body {
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						background-color: white;
+						border-bottom-left-radius: 15px;
+						border-bottom-right-radius: 15px;
+						padding: 5px 15px;
 
-					// i {
-					// 	font-size: 25px;
-					// 	color: black;
-					// }
-					// &:hover {
-					// 	i.fas.fa-heart.hover {
-					// 		display: block;
-					// 		background: -moz-linear-gradient(
-					// 			top,
-					// 			$secondary-color 0%,
-					// 			$primary-color 100%
-					// 		);
-					// 		background: -webkit-linear-gradient(
-					// 			top,
-					// 			$secondary-color 0%,
-					// 			$primary-color 100%
-					// 		);
-					// 		background: linear-gradient(
-					// 			to bottom,
-					// 			$secondary-color 0%,
-					// 			$primary-color 100%
-					// 		);
-					// 		-webkit-background-clip: text;
-					// 		-moz-background-clip: text;
-					// 		background-clip: text;
-					// 		-webkit-text-fill-color: transparent;
-					// 	}
-					// 	i.far.fa-heart.unhover {
-					// 		display: none;
-					// 	}
-					// }
+						.card-content {
+							h3.card-title {
+								font-size: 18px;
+								font-weight: 500;
+								margin-bottom: 5px;
+								margin-top: 8px;
+							}
+							p.card-des {
+								font-size: 16.8px;
+								margin: 5px 0 10px 0;
+								font-weight: 200;
+							}
+						}
+						.heart-icon {
+							@include heartIcon;
+						}
+					}
 				}
 			}
 		}
