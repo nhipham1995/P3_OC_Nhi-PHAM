@@ -8,11 +8,11 @@
 body {
 	font-family: $roboto;
 	margin: 0;
-	transform: translateY(100px);
-	opacity: 0;
-	@include animation("slideUp  ease forwards 1s");
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
+	// transform: translateY(100px);
+	// opacity: 0;
+	// @include animation("slideUp  ease forwards 1s");
+	// animation-iteration-count: 1;
+	// animation-fill-mode: forwards;
 }
 .container {
 	max-width: 90%;
@@ -74,9 +74,7 @@ main {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			opacity: 0;
-			transform: translateY(100px);
-			@include animation("slideUp .8s ease forwards .45s");
+
 			h1 {
 				font-family: $shrikhand;
 				font-size: 28px;
@@ -94,7 +92,7 @@ main {
 				margin-top: 40px;
 				transform: translateY(100px);
 				opacity: 0;
-				@include animation("slideUp .8s ease forwards .5s");
+				@include animation("slideUp .8s ease forwards .1s");
 			}
 			hr.border {
 				border: 2px solid $tertiaire-color;
@@ -102,23 +100,23 @@ main {
 				margin: 2px 0 15px 0;
 				transform: translateY(100px);
 				opacity: 0;
-				@include animation("slideUp .8s ease forwards .5s");
+				@include animation("slideUp .8s ease forwards .1s");
 			}
 			.list {
 				article.article-1 {
 					opacity: 0;
 					transform: translateY(100px);
-					@include animation("slideUp .8s ease forwards .6s");
+					@include animation("slideUp .5s ease forwards .2s");
 				}
 				article.article-2 {
 					opacity: 0;
 					transform: translateY(100px);
-					@include animation("slideUp .8s ease forwards .75s");
+					@include animation("slideUp .5s ease forwards .35s");
 				}
 				article.article-3 {
 					opacity: 0;
 					transform: translateY(100px);
-					@include animation("slideUp .8s ease forwards .9s");
+					@include animation("slideUp .5s ease forwards .5s");
 				}
 
 				article {
@@ -200,6 +198,13 @@ main {
 							.dish-detail {
 								margin-right: 90px;
 								transition: all 0.5s;
+								p.ingredient {
+									width: 230px;
+									// This 2 properties are neccessary for text-overflow smooth
+									white-space: nowrap;
+									overflow: hidden;
+									text-overflow: ellipsis;
+								}
 							}
 						}
 					}

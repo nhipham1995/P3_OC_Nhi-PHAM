@@ -487,15 +487,6 @@ th {
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
-  transform: translateY(100px);
-  opacity: 0;
-  -webkit-animation: slideUp  ease forwards 1s;
-  -moz-animation: slideUp  ease forwards 1s;
-  -ms-animation: slideUp  ease forwards 1s;
-  -o-animation: slideUp  ease forwards 1s;
-  animation: slideUp  ease forwards 1s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
 }
 
 .container {
@@ -561,13 +552,6 @@ main .detail .resto-name {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  opacity: 0;
-  transform: translateY(100px);
-  -webkit-animation: slideUp .8s ease forwards .45s;
-  -moz-animation: slideUp .8s ease forwards .45s;
-  -ms-animation: slideUp .8s ease forwards .45s;
-  -o-animation: slideUp .8s ease forwards .45s;
-  animation: slideUp .8s ease forwards .45s;
 }
 main .detail .resto-name h1 {
   font-family: "Shrikhand", cursive, sans-serif;
@@ -608,11 +592,11 @@ main .detail section h2 {
   margin-top: 40px;
   transform: translateY(100px);
   opacity: 0;
-  -webkit-animation: slideUp .8s ease forwards .5s;
-  -moz-animation: slideUp .8s ease forwards .5s;
-  -ms-animation: slideUp .8s ease forwards .5s;
-  -o-animation: slideUp .8s ease forwards .5s;
-  animation: slideUp .8s ease forwards .5s;
+  -webkit-animation: slideUp .8s ease forwards .1s;
+  -moz-animation: slideUp .8s ease forwards .1s;
+  -ms-animation: slideUp .8s ease forwards .1s;
+  -o-animation: slideUp .8s ease forwards .1s;
+  animation: slideUp .8s ease forwards .1s;
 }
 main .detail section hr.border {
   border: 2px solid #99e2d0;
@@ -620,38 +604,38 @@ main .detail section hr.border {
   margin: 2px 0 15px 0;
   transform: translateY(100px);
   opacity: 0;
-  -webkit-animation: slideUp .8s ease forwards .5s;
-  -moz-animation: slideUp .8s ease forwards .5s;
-  -ms-animation: slideUp .8s ease forwards .5s;
-  -o-animation: slideUp .8s ease forwards .5s;
-  animation: slideUp .8s ease forwards .5s;
+  -webkit-animation: slideUp .8s ease forwards .1s;
+  -moz-animation: slideUp .8s ease forwards .1s;
+  -ms-animation: slideUp .8s ease forwards .1s;
+  -o-animation: slideUp .8s ease forwards .1s;
+  animation: slideUp .8s ease forwards .1s;
 }
 main .detail section .list article.article-1 {
   opacity: 0;
   transform: translateY(100px);
-  -webkit-animation: slideUp .8s ease forwards .6s;
-  -moz-animation: slideUp .8s ease forwards .6s;
-  -ms-animation: slideUp .8s ease forwards .6s;
-  -o-animation: slideUp .8s ease forwards .6s;
-  animation: slideUp .8s ease forwards .6s;
+  -webkit-animation: slideUp .5s ease forwards .2s;
+  -moz-animation: slideUp .5s ease forwards .2s;
+  -ms-animation: slideUp .5s ease forwards .2s;
+  -o-animation: slideUp .5s ease forwards .2s;
+  animation: slideUp .5s ease forwards .2s;
 }
 main .detail section .list article.article-2 {
   opacity: 0;
   transform: translateY(100px);
-  -webkit-animation: slideUp .8s ease forwards .75s;
-  -moz-animation: slideUp .8s ease forwards .75s;
-  -ms-animation: slideUp .8s ease forwards .75s;
-  -o-animation: slideUp .8s ease forwards .75s;
-  animation: slideUp .8s ease forwards .75s;
+  -webkit-animation: slideUp .5s ease forwards .35s;
+  -moz-animation: slideUp .5s ease forwards .35s;
+  -ms-animation: slideUp .5s ease forwards .35s;
+  -o-animation: slideUp .5s ease forwards .35s;
+  animation: slideUp .5s ease forwards .35s;
 }
 main .detail section .list article.article-3 {
   opacity: 0;
   transform: translateY(100px);
-  -webkit-animation: slideUp .8s ease forwards .9s;
-  -moz-animation: slideUp .8s ease forwards .9s;
-  -ms-animation: slideUp .8s ease forwards .9s;
-  -o-animation: slideUp .8s ease forwards .9s;
-  animation: slideUp .8s ease forwards .9s;
+  -webkit-animation: slideUp .5s ease forwards .5s;
+  -moz-animation: slideUp .5s ease forwards .5s;
+  -ms-animation: slideUp .5s ease forwards .5s;
+  -o-animation: slideUp .5s ease forwards .5s;
+  animation: slideUp .5s ease forwards .5s;
 }
 main .detail section .list article {
   position: relative;
@@ -744,6 +728,12 @@ main .detail section .list article:hover .item-part {
 main .detail section .list article:hover .item-part .dish-detail {
   margin-right: 90px;
   transition: all 0.5s;
+}
+main .detail section .list article:hover .item-part .dish-detail p.ingredient {
+  width: 230px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 button {
