@@ -530,6 +530,17 @@ main {
 main .img-dish {
   width: 100%;
   overflow: hidden;
+  max-height: 300px;
+}
+@media (min-width: 560px) {
+  main .img-dish {
+    max-height: 400px;
+  }
+}
+@media (min-width: 560px) {
+  main .img-dish {
+    max-height: 500px;
+  }
 }
 main .img-dish figure {
   margin: 0;
@@ -637,6 +648,24 @@ main .detail section .list article.article-3 {
   -o-animation: slideUp .5s ease forwards .5s;
   animation: slideUp .5s ease forwards .5s;
 }
+main .detail section .list article.article-4 {
+  opacity: 0;
+  transform: translateY(100px);
+  -webkit-animation: slideUp .5s ease forwards .65s;
+  -moz-animation: slideUp .5s ease forwards .65s;
+  -ms-animation: slideUp .5s ease forwards .65s;
+  -o-animation: slideUp .5s ease forwards .65s;
+  animation: slideUp .5s ease forwards .65s;
+}
+@media (min-width: 768px) {
+  main .detail section .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
 main .detail section .list article {
   position: relative;
   overflow: hidden;
@@ -644,6 +673,11 @@ main .detail section .list article {
   margin-bottom: 18px;
   border-radius: 20px;
   box-shadow: 0px 5px 5px rgb(238, 236, 236);
+}
+@media (min-width: 768px) {
+  main .detail section .list article {
+    flex: 30%;
+  }
 }
 main .detail section .list article .checked-part {
   border-top-right-radius: 20px;
@@ -725,15 +759,36 @@ main .detail section .list article:hover .item-part {
   width: 100%;
   padding: 20px 2px 20px 10px;
 }
+main .detail section .list article:hover .item-part h3 {
+  width: calc(100% - 80px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 main .detail section .list article:hover .item-part .dish-detail {
   margin-right: 90px;
   transition: all 0.5s;
 }
 main .detail section .list article:hover .item-part .dish-detail p.ingredient {
-  width: 230px;
+  width: 200px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+@media (min-width: 560px) {
+  main .detail section .list article:hover .item-part .dish-detail p.ingredient {
+    width: 400px;
+  }
+}
+@media (min-width: 768px) {
+  main .detail section .list article:hover .item-part .dish-detail p.ingredient {
+    width: 800px;
+  }
+}
+@media (min-width: 1080px) {
+  main .detail section .list article:hover .item-part .dish-detail p.ingredient {
+    width: 1000px;
+  }
 }
 
 button {

@@ -19,9 +19,11 @@ body {
 	height: 100vh;
 	@include animation("fadeOutAnimation ease 4.2s");
 	animation-fill-mode: forwards;
-	margin: 30px;
-	@include flex-center();
+	margin: 50px auto;
+	@include flex-center;
+	flex-direction: column;
 	.loader {
+		margin: 20px auto;
 		background-color: $secondary-color;
 		position: relative;
 		display: inline-block;
@@ -43,8 +45,12 @@ body {
 			border-radius: 50px;
 			border: 6px solid transparent;
 			border-top-color: #fff;
-			@include animation("spin 1100ms linear infinite");
+			@include animation("spin 500ms linear infinite");
 		}
+	}
+	p {
+		font-size: 20px;
+		text-align: center;
 	}
 }
 section.page {

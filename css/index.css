@@ -502,11 +502,13 @@ body {
   -o-animation: fadeOutAnimation ease 4.2s;
   animation: fadeOutAnimation ease 4.2s;
   animation-fill-mode: forwards;
-  margin: 30px;
+  margin: 50px auto;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 .loader-section .loader {
+  margin: 20px auto;
   background-color: #ff79da;
   position: relative;
   display: inline-block;
@@ -528,11 +530,15 @@ body {
   border-radius: 50px;
   border: 6px solid transparent;
   border-top-color: #fff;
-  -webkit-animation: spin 1100ms linear infinite;
-  -moz-animation: spin 1100ms linear infinite;
-  -ms-animation: spin 1100ms linear infinite;
-  -o-animation: spin 1100ms linear infinite;
-  animation: spin 1100ms linear infinite;
+  -webkit-animation: spin 500ms linear infinite;
+  -moz-animation: spin 500ms linear infinite;
+  -ms-animation: spin 500ms linear infinite;
+  -o-animation: spin 500ms linear infinite;
+  animation: spin 500ms linear infinite;
+}
+.loader-section p {
+  font-size: 20px;
+  text-align: center;
 }
 
 section.page {
