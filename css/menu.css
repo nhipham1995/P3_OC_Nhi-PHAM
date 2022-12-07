@@ -685,6 +685,7 @@ main .detail section .list article .checked-part {
   margin: auto;
   background-color: #99e2d0;
   height: 100%;
+  display: none;
   width: 0;
   position: absolute;
   transition: all 0.5s;
