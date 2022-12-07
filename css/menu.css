@@ -851,5 +851,9 @@ footer .footer-list .footer-item {
   margin: 6px 0;
   font-weight: 200;
 }
+footer .footer-list .footer-item a {
+  text-decoration: none;
+  color: white;
+}
 
 /*# sourceMappingURL=menu.css.map */

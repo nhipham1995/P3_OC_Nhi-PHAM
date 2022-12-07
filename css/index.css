@@ -698,7 +698,7 @@ section.function-part .container .functions article .function-number {
   color: white;
   top: 0;
   bottom: 0;
-  left: -16;
+  left: -16px;
   margin: auto 0;
   display: flex;
   align-items: center;
@@ -880,6 +880,10 @@ footer .footer-list .footer-item-with-icon p {
 footer .footer-list .footer-item {
   margin: 6px 0;
   font-weight: 200;
+}
+footer .footer-list .footer-item a {
+  text-decoration: none;
+  color: white;
 }
 
 /*# sourceMappingURL=index.css.map */
