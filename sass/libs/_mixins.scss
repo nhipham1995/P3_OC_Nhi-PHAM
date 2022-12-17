@@ -1,34 +1,34 @@
-//reusable function
+// reusable function
 
-// @mixin footerStyle {
-// 	transform: translateY(100px);
-// 	opacity: 0;
-// 	background-color: rgb(67, 67, 67);
-// 	color: rgb(245, 244, 244);
-// 	padding-top: 1px;
-// 	padding-bottom: 40px;
-// 	.logo {
-// 		margin-top: 20px;
-// 		font-family: $shrikhand;
-// 		font-size: 22px;
-// 	}
-// 	.footer-list {
-// 		margin-top: 20px;
-// 		.footer-item-with-icon {
-// 			display: flex;
-// 			justify-content: start;
-// 			align-items: center;
-// 			i {
-// 				width: 25px;
-// 				font-size: 14px;
-// 			}
-// 			p {
-// 				margin: 5px 0;
-// 			}
-// 		}
-// 		.footer-item {
-// 			margin: 6px 0;
-// 			font-weight: 200;
-// 		}
-// 	}
-// }
+@mixin footerStyle {
+	transform: translateY(100px);
+	opacity: 0;
+	background-color: rgb(67, 67, 67);
+	color: rgb(245, 244, 244);
+	padding-top: 1px;
+	padding-bottom: 40px;
+	.logo {
+		margin-top: 20px;
+		font-family: $shrikhand;
+		font-size: 22px;
+	}
+	.footer-list {
+		margin-top: 20px;
+		.footer-item-with-icon {
+			display: flex;
+			justify-content: start;
+			align-items: center;
+			i {
+				width: 25px;
+				font-size: 14px;
+			}
+			p {
+				margin: 5px 0;
+			}
+		}
+		.footer-item {
+			margin: 6px 0;
+			font-weight: 200;
+		}
+	}
+}

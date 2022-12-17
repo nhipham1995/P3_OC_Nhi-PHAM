@@ -676,7 +676,8 @@ main .detail section .list article {
 }
 @media (min-width: 768px) {
   main .detail section .list article {
-    flex: 30%;
+    flex: 30% 1 0;
+    min-width: 300px;
   }
 }
 main .detail section .list article .checked-part {

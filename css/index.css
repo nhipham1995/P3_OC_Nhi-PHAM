@@ -536,12 +536,12 @@ body {
   -o-animation: spin 500ms linear infinite;
   animation: spin 500ms linear infinite;
 }
-.loader-section p {
+.loader-section h3 {
   font-size: 20px;
   text-align: center;
 }
 
-section.page {
+.page {
   -webkit-animation: expand ease 4.2s;
   -moz-animation: expand ease 4.2s;
   -ms-animation: expand ease 4.2s;
@@ -652,7 +652,7 @@ section.function-part {
   -o-animation: slideUp .8s ease forwards 3.4s;
   animation: slideUp .8s ease forwards 3.4s;
 }
-@media (min-width: 1080px) {
+@media (min-width: 900px) {
   section.function-part .container .functions {
     display: flex;
     flex-wrap: wrap;
@@ -672,9 +672,15 @@ section.function-part .container .functions article {
   cursor: pointer;
   transform: scale(1);
 }
+@media (min-width: 900px) {
+  section.function-part .container .functions article {
+    min-width: 400px;
+  }
+}
 @media (min-width: 1080px) {
   section.function-part .container .functions article {
     flex: 25%;
+    min-width: 300px;
   }
 }
 section.function-part .container .functions article:hover {
@@ -717,7 +723,7 @@ section.function-part .container .functions article .function-content i {
   display: flex;
   justify-content: center;
 }
-section.function-part .container .functions article .function-content p {
+section.function-part .container .functions article .function-content h3 {
   font-size: 18px;
   font-weight: 500;
 }
